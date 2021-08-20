@@ -1,0 +1,65 @@
+<div class="jumbotron bg-white text-center">
+  <h1 display-4>Corona-Covid-19 Tracker</h1>
+  <hr>
+  <app-dashboard-card [totalConfirmed]="totalConfirmed" [totalActive]="totalActive" [totalRecovered]="totalRecovered" [totalDeaths]="totalDeaths"></app-dashboard-card>
+</div>
+
+
+<div class="ui form">
+  <div class="inline fields a">
+    <label >Select Case Type : </label>
+    <div class="field">
+      <div class="ui radio checkbox">
+        <input type="radio" name="caseType" checked="" id="a" tabindex="0" class="hidden" value="a" #a (click)="ubdateChart(a)">
+        <label for="a">Confirmed</label>
+      </div>
+    </div>
+    <div class="field">
+      <div class="ui radio checkbox">
+        <input type="radio" name="caseType" id="b" tabindex="0" class="hidden" value="b" #b (click)="ubdateChart(b)">
+        <label for="b">Deaths</label>
+      </div>
+    </div>
+    <div class="field">
+      <div class="ui radio checkbox">
+        <input type="radio" id="c" name="caseType" tabindex="0" class="hidden" value="c" #c (click)="ubdateChart(c)">
+        <label for="c">Recovered</label>
+      </div>
+    </div>
+    <div class="field">
+      <div class="ui radio checkbox">
+        <input type="radio" id="d" name="caseType" tabindex="0" class="hidden" value="d" #d (click)="ubdateChart(d)">
+        <label for="d">Active</label>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="k">
+  <div *ngIf="pieChart.dataTable.length>0">
+  <google-chart #mychart [data]="pieChart"></google-chart>
+  </div>
+<hr>
+  <div *ngIf="pieChart.dataTable.length>0">
+  <google-chart #mychart2 [data]="columnChart"></google-chart>
+  </div>
+</div>
+
+<!--<div class="row">-->
+<!--  <div *ngIf="pieChart.dataTable.length>0">-->
+<!--    <google-chart [data]="pieChart"></google-chart>-->
+<!--  </div>-->
+<!--  <hr>-->
+<!--  <div *ngIf="pieChart.dataTable.length>0">-->
+<!--    <google-chart [data]="columnChart"></google-chart>-->
+<!--  </div>-->
+<!--</div>-->
+
+<div class="form-check form-switch mg" >
+  <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" >
+  <label class="form-check-label" for="flexSwitchCheckDefault">Default switch checkbox input</label>
+</div>
+<div class="form-check form-switch  mg">
+  <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
+  <label class="form-check-label" for="flexSwitchCheckChecked">Checked switch checkbox input</label>
+</div>
+
